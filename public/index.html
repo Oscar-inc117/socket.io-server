@@ -6,7 +6,7 @@
     <title>Socket Server</title>
 </head>
 <body>
-    <h1>Declined access</h1>
+    <h1>What it do babyyy!!</h1>
     <script src="socket.io/socket.io.js"></script>
     <script>
         let socket = io();
@@ -16,13 +16,16 @@
         });
 
         socket.on('disconnect', () => {
-            console.log('Server disconnected :()');
+            console.log('Server disconnected :(');
         });
-
-        socket.emit('message', {name: "Walachaval"});
 
         socket.on('message', (data) => {
             console.log('Listening', data);
+        });
+
+        socket.on('videogames', (data) => {
+            console.clear();
+            console.table(data)
         });
     </script>
 </body>
